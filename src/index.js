@@ -1,13 +1,3 @@
-function handleSearchSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-form-input");
-  let cityElement = document.querySelector("#city");
-
-  cityElement.innerHTML = searchInput.value;
-
-  searchCity(searchInput.value);
-}
-
 function refreshWater(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
@@ -22,7 +12,7 @@ function refreshWater(response) {
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = format(date);
   descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElemement.innerHTML = `<img src="${response.data.condition.icon_url}" class= "weather-app-icon" />`;
@@ -55,7 +45,14 @@ function searchCity(city) {
   axios.get(apiUrl).then(refreshWeather);
 }
 
-let searchFormElement = documemt.querySelector("#search-form");
-searchFormElement.addEventListiner("Submit", handleSearchSubmit);
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
 
-searchCity("Paris");
+  searchCity(searchInput.value);
+}
+
+let searchFormElement = documemt.querySelector("#search-form");
+searchFormElement.addEventListiner("submit", handleSearchSubmit);
+
+searchCity("Lisbon");
