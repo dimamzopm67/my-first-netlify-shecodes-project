@@ -55,4 +55,4 @@ function handleSearchSubmit(event) {
 let searchFormElement = documemt.querySelector("#search-form");
 searchFormElement.addEventListiner("submit", handleSearchSubmit);
 
-searchCity("Lisbon");
+searchCity("Paris");
