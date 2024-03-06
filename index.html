@@ -9,14 +9,15 @@
   <body>
     <div class="weather-app">
       <header>
-        <form>
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city  . . ."
             required
             class="search- form-input"
+            id="search-form-input"
           />
-          <input type="submit" value="search" class="search-form-button" />
+          <input type="submit" value="search" class="search-form-button" id="search-form-button" />
         </form>
       </header>
       <main>
@@ -54,5 +55,6 @@
         >
       </footer>
     </div>
+    <script src="src/indec.js"></script>
   </body>
 </html>
