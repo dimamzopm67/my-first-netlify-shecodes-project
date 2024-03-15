@@ -74,10 +74,9 @@ function displayforecast() {
    `;
   });
 
-}
-
   let forecast = document.querySelector("#forecast");
-foreElement.innerHTML = forecastHtml
+foreElement.innerHTML = forecastHtml;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
