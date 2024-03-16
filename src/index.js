@@ -55,7 +55,7 @@ function handleSearchSubmit(event) {
 }
 function formstDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let days = ["sun", "Mon"; "Tue", "Wed", "Thu","Fri", "Sat"];
+  let days = ["sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[date.getDay()];
 }
@@ -66,28 +66,30 @@ function getForcast(city) {
   axios(apiurl).then(displayForecast);
 }
 function displayforecast(response) {
+  let forecastHtml = "";
 
-let forecastHtml = "";
-
-  response,data.daily.forEach(function (day, index) {
-    if (index < 5) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response,
+    data.daily.forEach(function (day, index) {
+      if (index < 5) {
+        forecastHtml =
+          forecastHtml +
+          `
      <div class="weather-forecast--day">
-      <div class="weather-forecast-date">${ formatDay(day.time)}</div>
+      <div class="weather-forecast-date">${formatDay(day.time)}</div>
         
-        <img src="${day.condition.icon-url}" class="weather-forecast-icon"  />
+        <img src="${day.condition.icon - url}" class="weather-forecast-icon"  />
          <div class = "weather-forecast-temperatures">
               <div class = "weather-forecast-temperature">
                 <strong>${Math.round(day.temperature.maximum)}°</strong>
                 </div>
-              </div class="weather-forecast-temperature">${Math.round(day.temperature.minimum</div>
+              </div class="weather-forecast-temperature">${Math.round(
+                day.temperature.minimum
+              )}° </div>
               </div>
-              </div>
+          </div>
    `;
-  }
-  });
+      }
+    });
 
   let forecast = document.querySelector("#forecast");
   foreElement.innerHTML = forecastHtml;
@@ -96,4 +98,4 @@ let forecastHtml = "";
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Paris");
+searchCity("Cape Town");
