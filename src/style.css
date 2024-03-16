@@ -12,7 +12,11 @@ a {
 }
 
 .weather-app {
-  background: #e7eaf6;
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
   max-width: 600px;
   margin: 45px auto;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
