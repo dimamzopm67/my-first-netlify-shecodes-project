@@ -68,12 +68,11 @@ function getForcast(city) {
 function displayforecast(response) {
   let forecastHtml = "";
 
-  response,
-    data.daily.forEach(function (day, index) {
-      if (index < 5) {
-        forecastHtml =
-          forecastHtml +
-          `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
      <div class="weather-forecast--day">
       <div class="weather-forecast-date">${formatDay(day.time)}</div>
         
@@ -88,8 +87,8 @@ function displayforecast(response) {
               </div>
           </div>
    `;
-      }
-    });
+    }
+  });
 
   let forecast = document.querySelector("#forecast");
   foreElement.innerHTML = forecastHtml;
