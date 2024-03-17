@@ -33,7 +33,7 @@ function formatDate(date) {
     "Saturday",
   ];
 
-  let day = [date.getDay()];
+  let day = days[date.getDay()];
 
   if (minutes < 10) {
     minutes = `0 ${minutes}`;
@@ -62,8 +62,8 @@ function formatDay(timestamp) {
 
 function getForecast(city) {
   let apiKey = "a314ef9f24629aotd24ab8f701b0f5fc";
-  let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  axios(url).then(displayForecast);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
   let forecastHtml = "";
