@@ -80,12 +80,10 @@ main {
 
 .weather-app-icon {
   font-size: 88px;
-  margin-top: 88px;
 }
 
 .weather-app-temperature {
   font-size: 88px;
-  margin-left: 88px;
   font-weight: bold;
 }
 
@@ -132,4 +130,10 @@ footer {
   text-align: center;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.weather-forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
